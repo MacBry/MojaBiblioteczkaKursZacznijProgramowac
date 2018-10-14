@@ -1,5 +1,8 @@
 package pl.mac.bry.kurs.moja.biblioteczka;
 
+import java.util.Locale;
+import java.util.ResourceBundle;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -14,14 +17,18 @@ public class Main extends Application {
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		
+		Locale.setDefault(new Locale("en"));
+	
 		FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/fxml/BorderPaneMain.fxml"));
+		ResourceBundle resourceBundle = ResourceBundle.getBundle("bundles.ApplicationResources_pl_PL");
+		fxmlLoader.setResources(resourceBundle);
+		
 		BorderPane borderPane = fxmlLoader.load();
 		Scene scene = new Scene(borderPane);
 		
 		primaryStage.setScene(scene);
 		
-		primaryStage.setTitle("Moja biblioteczka - kurs Zacznij Programowaæ");
+		primaryStage.setTitle(resourceBundle.getString("title.applictation"));
 		primaryStage.show();
 	}
 
