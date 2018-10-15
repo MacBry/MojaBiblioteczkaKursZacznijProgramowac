@@ -17,10 +17,10 @@ public class Main extends Application {
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		Locale.setDefault(new Locale("en"));
+		Locale.setDefault(new Locale("en_US"));
 	
 		FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/fxml/BorderPaneMain.fxml"));
-		ResourceBundle resourceBundle = ResourceBundle.getBundle("bundles.ApplicationResources_pl_PL");
+		ResourceBundle resourceBundle = ResourceBundle.getBundle("bundles.ApplicationResources");
 		fxmlLoader.setResources(resourceBundle);
 		
 		BorderPane borderPane = fxmlLoader.load();
