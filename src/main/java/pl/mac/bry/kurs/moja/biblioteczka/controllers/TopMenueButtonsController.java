@@ -1,8 +1,10 @@
 package pl.mac.bry.kurs.moja.biblioteczka.controllers;
 
 
-
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.ToggleButton;
+import javafx.scene.control.ToggleGroup;
 
 public class TopMenueButtonsController {
 
@@ -11,6 +13,11 @@ public class TopMenueButtonsController {
 	public void setMainController(MainController mainController) {
 		this.mainController = mainController;
 	}
+	@FXML
+	private Button addBookButton;
+	
+	@FXML
+	private ToggleGroup toggleButtons;
 
 	@FXML
 	private void initialize() {
@@ -24,11 +31,16 @@ public class TopMenueButtonsController {
 	
 	@FXML
 	public void openBooksList() {
-		System.out.println("list ksi¹zek");
+		System.out.println("list ksiï¿½zek");
 	}
 	
 	@FXML
 	public void openStatisctic() {
 		System.out.println("Statystyki");
+	}
+	public void addBookOnAction(){
+		if(toggleButtons.getSelectedToggle() != null) {
+			toggleButtons.getSelectedToggle().setSelected(false);
+		}
 	}
 }
