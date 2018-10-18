@@ -26,18 +26,20 @@ public class TopMenueButtonsController {
 	
 	@FXML
 	public void openLibrary() {
-		System.out.println("biblioteka");
+		mainController.setCenter("/fxml/Library.fxml");
 	}
 	
 	@FXML
 	public void openBooksList() {
-		System.out.println("list ksi�zek");
+		mainController.setCenter("/fxml/BookList.fxml");
 	}
 	
 	@FXML
 	public void openStatisctic() {
-		System.out.println("Statystyki");
+		mainController.setCenter("/fxml/Statistics.fxml");
 	}
+	
+	@FXML
 	public void addBookOnAction(){
 		if(toggleButtons.getSelectedToggle() != null) {
 			toggleButtons.getSelectedToggle().setSelected(false);
