@@ -7,6 +7,14 @@ import javafx.scene.control.ToggleGroup;
 
 public class TopMenueButtonsController {
 	
+	private static final String ADD_BOOK_FXML = "/fxml/AddBook.fxml";
+
+	private static final String STATISTICS_FXML = "/fxml/Statistics.fxml";
+
+	private static final String BOOK_LIST_FXML = "/fxml/BookList.fxml";
+
+	private static final String LIBRARY_FXML = "/fxml/Library.fxml";
+
 	@FXML
 	private MainController mainController;
 	
@@ -26,17 +34,17 @@ public class TopMenueButtonsController {
 	
 	@FXML
 	public void openLibrary() {
-		mainController.setCenter("/fxml/Library.fxml");
+		mainController.setCenter(LIBRARY_FXML);
 	}
 	
 	@FXML
 	public void openBooksList() {
-		mainController.setCenter("/fxml/BookList.fxml");
+		mainController.setCenter(BOOK_LIST_FXML);
 	}
 	
 	@FXML
 	public void openStatisctic() {
-		mainController.setCenter("/fxml/Statistics.fxml");
+		mainController.setCenter(STATISTICS_FXML);
 	}
 	
 	@FXML
@@ -45,6 +53,6 @@ public class TopMenueButtonsController {
 			toggleButtons.getSelectedToggle().setSelected(false);
 		}
 		
-		mainController.setCenter("/fxml/AddBook.fxml");
+		mainController.setCenter(ADD_BOOK_FXML);
 	}
 }
