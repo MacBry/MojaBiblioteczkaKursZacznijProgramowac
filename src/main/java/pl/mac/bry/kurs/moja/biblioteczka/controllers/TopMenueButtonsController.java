@@ -3,11 +3,11 @@ package pl.mac.bry.kurs.moja.biblioteczka.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 
 public class TopMenueButtonsController {
-
+	
+	@FXML
 	private MainController mainController;
 	
 	public void setMainController(MainController mainController) {
@@ -42,5 +42,7 @@ public class TopMenueButtonsController {
 		if(toggleButtons.getSelectedToggle() != null) {
 			toggleButtons.getSelectedToggle().setSelected(false);
 		}
+		
+		mainController.setCenter("/fxml/AddBook.fxml");
 	}
 }
