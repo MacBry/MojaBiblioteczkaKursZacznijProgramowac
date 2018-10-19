@@ -1,12 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
 <BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.mac.bry.kurs.moja.biblioteczka.controllers.MainController">
    <top>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
-      	<fx:include source="TopMenueButtons.fxml" fx:id="topMenueButtons" />
+         <MenuBar>
+           <menus>
+             <Menu mnemonicParsing="false" text="%menueBar.file">
+               <items>
+                 <MenuItem mnemonicParsing="false" onAction="#closeAppOnActrion" text="%menueBar.file.close" />
+               </items>
+             </Menu>
+             <Menu mnemonicParsing="false" text="%menueBar.edit">
+               <items>
+                     <RadioMenuItem mnemonicParsing="false" onAction="#setCaspianStyleOnAction" text="CASPIAN">
+                        <toggleGroup>
+                           <ToggleGroup fx:id="radioMenueItems" />
+                        </toggleGroup>
+                     </RadioMenuItem>
+                     <RadioMenuItem mnemonicParsing="false" onAction="#setModenaOnAction" selected="true" text="MODENA" toggleGroup="$radioMenueItems" />
+                     <SeparatorMenuItem mnemonicParsing="false" />
+                     <CheckMenuItem mnemonicParsing="false" onAction="#setAllwaysOnTopOnActrion" text="%menueBar.edit.allwaysOnTop" />
+               </items>
+             </Menu>
+             <Menu mnemonicParsing="false" text="%menueBar.help">
+               <items>
+                 <MenuItem mnemonicParsing="false" onAction="#aboutAppOnAction" text="%menueBar.help.about" />
+               </items>
+             </Menu>
+           </menus>
+         </MenuBar>
+      	<fx:include fx:id="topMenueButtons" source="TopMenueButtons.fxml" />
       </VBox>
    </top>
 </BorderPane>
