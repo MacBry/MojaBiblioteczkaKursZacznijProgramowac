@@ -5,10 +5,13 @@ import java.util.ResourceBundle;
 
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.CheckMenuItem;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 
 public class MainController {
 
@@ -40,8 +43,11 @@ public class MainController {
 	}
 	
 	@FXML
-	public void setAllwaysOnTopOnActrion() {
-		
+	public void setAllwaysOnTopOnActrion(ActionEvent event) {
+		Boolean value = ((CheckMenuItem) event.getSource()).selectedProperty().get();
+		Stage stage = (Stage)borderPane.getScene().getWindow();
+		stage.setAlwaysOnTop(value);
+
 	}
 	
 	@FXML
