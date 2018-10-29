@@ -9,7 +9,7 @@ public class TopMenueButtonsController {
 	
 	private static final String ADD_BOOK_FXML = "/fxml/AddBook.fxml";
 
-	private static final String STATISTICS_FXML = "/fxml/Statistics.fxml";
+	private static final String STATISTICS_FXML = "/fxml/Statisti.fxml";
 
 	private static final String BOOK_LIST_FXML = "/fxml/BookList.fxml";
 

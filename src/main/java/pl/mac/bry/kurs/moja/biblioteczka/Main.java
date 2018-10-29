@@ -7,9 +7,13 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import pl.mac.bry.kurs.moja.biblioteczka.utils.FxmlUtils;
 
 public class Main extends Application {
+
+	private static final String BORDER_PANE_MAIN_FXML = "/fxml/BorderPaneMain.fxml";
 
 	public static void main (String [] args ) {
 		launch(args);
@@ -18,17 +22,14 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		//Locale.setDefault(new Locale("en_US"));
-	
-		FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/fxml/BorderPaneMain.fxml"));
-		ResourceBundle resourceBundle = ResourceBundle.getBundle("bundles.ApplicationResources");
-		fxmlLoader.setResources(resourceBundle);
+		FxmlUtils.fxmlLoader(BORDER_PANE_MAIN_FXML);
 		
-		BorderPane borderPane = fxmlLoader.load();
+		Pane borderPane = FxmlUtils.fxmlLoader(BORDER_PANE_MAIN_FXML);
 		Scene scene = new Scene(borderPane);
 		
 		primaryStage.setScene(scene);
 		
-		primaryStage.setTitle(resourceBundle.getString("title.applictation"));
+		primaryStage.setTitle(FxmlUtils.resourceBundleLoader().getString("title.applictation"));
 		primaryStage.show();
 	}
 
